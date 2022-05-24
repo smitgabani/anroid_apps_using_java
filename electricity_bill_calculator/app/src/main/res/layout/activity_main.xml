@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <!-- 3.>1. Layouts must be created using LinearLayouts. Do not use Constraint, Grid, or Relative layouts.
+    -->
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!-- 2.>1. 1. When the application loads, present 3 textboxes, a switch and 2 buttons, labeled Calculate and
+            Reset
+        -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Electricity Bill Calculator"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Morning usage (kwh)"
+            android:textStyle="bold" />
+        <!--- 2.>2. Textboxes must contain appropriate hints
+            b. Textboxes must use the appropriate keyboard type.
+            -->
+        <EditText
+            android:id="@+id/i_mor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Morning usage"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Afternoon usage (kwh)"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/i_aft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Afternoon usage"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Evening usage (kwh)"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/i_eve"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Evening usage"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp" />
+
+        <Switch
+            android:id="@+id/s_renewable"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Uses renewable energy source?" />
+
+        <Button
+            android:id="@+id/calculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calculate" />
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset" />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:padding="5dp"
+            android:text="Charges Breakdown"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/out_mor_chg"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:padding="3dp"
+            android:text="Morning usage charges" />
+
+        <TextView
+            android:id="@+id/out_aft_chg"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:padding="3dp"
+            android:text="Afternoon usage charges" />
+
+        <TextView
+            android:id="@+id/out_eve_chg"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:padding="3dp"
+            android:text="Evening usage charges" />
+
+        <TextView
+            android:id="@+id/out_tot_chg"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:background="@color/teal_200"
+            android:padding="10dp"
+            android:text="Total usage charges"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/out_sales"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:padding="3dp"
+            android:text="Sales tax" />
+
+        <TextView
+            android:id="@+id/out_env_reb"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:padding="3dp"
+            android:text="Environment rebate" />
+
+        <TextView
+            android:id="@+id/out_tot_reb"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:background="@color/teal_200"
+            android:padding="10dp"
+            android:text="Total regulatory charges"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/out_tot_bill"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/teal_700"
+            android:padding="10dp"
+            android:text="Total Bill amount"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
